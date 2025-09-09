@@ -1,0 +1,357 @@
+:root {
+  --accent: #ff6b6b;
+  --muted: #9aa4b2;
+}
+#searchResults {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px;
+}
+
+.movie {
+  width: 180px;
+  height: 270px;
+  margin: 10px;
+  text-align: center;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #222;
+  transition: transform 0.3s;
+}
+
+.movie img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.movie h3 {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+.movie:hover {
+  transform: scale(1.05);
+}
+
+/* Placeholder shimmer effect */
+.placeholder {
+  background: linear-gradient(-90deg, #222 0%, #333 50%, #222 100%);
+  background-size: 400% 400%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, Segoe UI, Roboto, 'Helvetica Neue', Arial;
+  background: #071022;
+  color: #e6eef6;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(6px);
+  background: #0f1724;
+}
+.btn{
+  margin-left: 5px;
+  font-size: 12px;
+  border: none;
+  
+  border-radius: 25%; /* right rounded corners */
+  background-color: #2ee909; /* accent color */
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+.btn:hover {
+  background-color: rgb(108, 226, 161);  /* Hover color change */
+  transform: scale(1.05);       /* Slight grow effect */
+}
+.brand {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+
+
+.brand-title {
+  font-weight: 700;
+}
+
+.brand-subtitle {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+nav {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+nav a:hover {
+  background: rgba(255, 255, 255, 0.03);
+  color: #fff;
+}
+
+.controls {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.search {
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid rgb(117, 110, 110);
+  background: transparent;
+  color: inherit;
+  min-width: 220px;
+}
+
+.select {
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: transparent;
+  color: inherit;
+}
+
+.btn {
+  padding: 10px 14px;
+  background: var(--accent);
+  border: none;
+  border-radius: 10px;
+  color: #071022;
+  font-weight: 600;
+  cursor: pointer;
+}
+.login-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ff6b6b;
+  color: white !important;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  background: #ff4444;
+}
+
+/* Sticky navbar already hona chahiye, agar nhi hai to add karo */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #0f1724;  /* navbar ka background */
+}
+
+/* Main section scrollable */
+.main-content {
+  padding: 20px;
+  min-height: calc(100vh - 120px); /* footer ke liye jagah chhod di */
+  overflow-y: auto;
+}
+
+/* Dummy boxes for scroll effect */
+
+
+/* Footer */
+.footer {
+  background: #0b1220;
+  color: #9aa4b2;
+  text-align: center;
+  padding: 15px 10px;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+}
+ul{
+  list-style: none;
+}
+#tmdb{
+  text-decoration: none;
+  color: wheat;
+}
+.name{
+  color: rgb(192, 152, 192);
+  font-size: 16px;
+}
+/* Dummy box container */
+.dummy-box {
+  height: 320px;           /* thoda height adjust */
+  margin: 15px 0;
+  background: #1e293b;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between; /* horizontally center movie card */
+  align-items: center;     /* vertically center movie card */
+  overflow: hidden;
+}
+
+/* Movie Card inside dummy box */
+.movie-card {
+  width: 180px;           /* card width */
+  background: #0f1724;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  transition: transform 0.2s;
+  cursor: pointer;
+  margin-left:5px;
+  margin-right:5px;
+}
+
+.movie-card:hover {
+  transform: translateY(-5px);
+}
+
+.movie-poster {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+}
+
+.movie-title {
+  padding: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #e6eef6;
+  text-align: center;
+  background: #0b1220;
+}
+.first{
+  width: 20%;
+}
+.third{
+  width: 20%;
+}
+.heading{
+
+
+   text-align: center;
+}
+.active {
+    text-decoration: underline; /* Underline dikhayega */
+    color: white;             /* Optional: color change bhi kar sakte ho */
+    font-weight: bold;           /* Optional: thoda highlight */
+}
+
+
+/* Logo container */
+.logo {
+  display: flex;
+  align-items: center;    /* vertical center */
+  justify-content: center;/* horizontal center (agar navbar me center chahiye) */
+  height: 60px;           /* navbar ki height ke hisaab se adjust karo */
+  cursor: pointer;        /* hover pe pointer dikhega */
+}
+
+/* Logo image */
+.logo img {
+  height: 90%;           /* logo ko container ki height ke hisaab se fit karega */
+  width: auto;            /* aspect ratio maintain karega */
+  display: block;         /* niche ka gap hata dega */
+  object-fit: contain;    /* image ko crop nahi karega */
+  border-radius: 50%;
+}
+
+/* Responsive adjustment */
+@media (max-width: 600px) {
+  .logo {
+    height: 40px;   /* mobile par thoda chhota */
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 15px;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  .controls {
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .search {
+    min-width: 100%;
+  }
+
+  .dummy-box {
+    height: auto;
+    overflow-x: auto;
+    padding: 10px 0;
+  }
+
+  .dummy-box::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .dummy-box::-webkit-scrollbar-thumb {
+    background-color: var(--accent);
+    border-radius: 3px;
+  }
+
+  .movie-card {
+    min-width: 140px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .brand {
+    gap: 8px;
+  }
+
+  .brand-title {
+    font-size: 18px;
+  }
+
+  .brand-subtitle {
+    font-size: 10px;
+  }
+
+  footer.footer {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .first, .third {
+    width: 100%;
+  }
+}
+
